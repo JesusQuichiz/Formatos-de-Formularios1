@@ -19,7 +19,7 @@
             width: 85%;
             height: 90%;
             margin: 15mm;
-            margin-top: 10mm;
+            margin-top: 25mm;
             margin-bottom: 15mm;
             box-sizing: border-box;}
         td{height: 20px;padding: 1px;font-size: 13px;/*border: 1px black solid;*/}
@@ -31,7 +31,7 @@
         
         .imagen-esquina {
             position: absolute;
-            top: -3mm; /* Ajusta la distancia desde el borde superior (cambia 10mm según necesites) */
+            top: -15mm; /* Ajusta la distancia desde el borde superior (cambia 10mm según necesites) */
             left: 10mm; /* Ajusta la distancia desde el borde izquierdo (cambia 10mm según necesites) */
             /* Ajusta el tamaño de la imagen (cambia width y height según necesites) */
             width: 40px;
@@ -40,7 +40,7 @@
 
         .imagen-esquina-derecha {
             position: absolute;
-            top: -3mm; /* Ajusta la distancia desde el borde superior (cambia 10mm según necesites) */
+            top: -15mm; /* Ajusta la distancia desde el borde superior (cambia 10mm según necesites) */
             right: 10mm; /* Ajusta la distancia desde el borde derecho (cambia 10mm según necesites) */
             /* Ajusta el tamaño de la imagen (cambia width y height según necesites) */
             width: 40px;
@@ -49,6 +49,8 @@
 
     </style>
     <div class="content">
+        <img src="/images/dirsapol.png" class="imagen-esquina">
+            <img src="/images/dirsapol.png" class="imagen-esquina-derecha">
     <head >
         <table><th style="font-size: 10px">HOSPITAL NACIONAL PNP.LNS</th></table>
         <h3 align="center">FORMATO DE REGISTRO Y REPORTE DE INCIDENTES</h3><h3 align="center">Y EFECTOS ADVERSOS</h3></head>

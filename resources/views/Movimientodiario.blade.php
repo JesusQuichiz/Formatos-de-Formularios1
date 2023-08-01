@@ -17,8 +17,8 @@
             width: 90%;
             height: 90%;
             margin: 10mm;
-            margin-top: 15mm;
-            margin-bottom: 15mm;
+            margin-top: 25mm;
+            margin-bottom: 10mm;
             box-sizing: border-box;}
         td{height: 20px;padding: 1px;font-size: 12px;/*border: 1px black solid;*/}
         th{font-size: 13.5px;text-align: center;/*border: 1px black solid;*/height: 20px;padding: 1px}
@@ -29,7 +29,7 @@
         
         .imagen-esquina {
             position: absolute;
-            top: -3mm; /* Ajusta la distancia desde el borde superior (cambia 10mm según necesites) */
+            top: -15mm; /* Ajusta la distancia desde el borde superior (cambia 10mm según necesites) */
             left: 10mm; /* Ajusta la distancia desde el borde izquierdo (cambia 10mm según necesites) */
             /* Ajusta el tamaño de la imagen (cambia width y height según necesites) */
             width: 40px;
@@ -38,7 +38,7 @@
 
         .imagen-esquina-derecha {
             position: absolute;
-            top: -3mm; /* Ajusta la distancia desde el borde superior (cambia 10mm según necesites) */
+            top: -15mm; /* Ajusta la distancia desde el borde superior (cambia 10mm según necesites) */
             right: 10mm; /* Ajusta la distancia desde el borde derecho (cambia 10mm según necesites) */
             /* Ajusta el tamaño de la imagen (cambia width y height según necesites) */
             width: 40px;
@@ -46,8 +46,10 @@
         }
     </style>
     <div class="content">
+        <img src="/images/dirsapol.png" class="imagen-esquina">
+            <img src="/images/dirsapol.png" class="imagen-esquina-derecha">
     <head><h3>MOVIMIENTO DIARIO DE HOSPITALIZACION DE LAS CERO A LAS 24 HORAS</h3></head>
-    <h1></h1>
+    <h3></h3>
     <body>
         
     <table>
