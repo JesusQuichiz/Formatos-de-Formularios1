@@ -44,3 +44,6 @@ Route::get('Proyecto1Senati/Evolucionmedica', function () {
 ;Route::get('Proyecto1Senati/lunes1707', function () {
     return view('lunes1707');
 });
+;Route::get('Proyecto1Senati/HojaInterconsulta', function () {
+    return view('HojaInterconsulta');
+});
