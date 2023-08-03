@@ -173,8 +173,9 @@
        
         function agregarCoordenada(event) {
       const celda = document.getElementById('celda1');
-      const x = event.clientX - celda.offsetLeft+100;
-      const y = event.clientY - celda.offsetTop+680;
+      const celdaRect = celda.getBoundingClientRect();
+      const x = event.pageX - celdaRect.left - window.scrollX+139;
+      const y = event.pageY - celdaRect.top - window.scrollY+457;
 
       const coordenada = document.createElement('div');
       coordenada.className = 'coordenada';
@@ -255,7 +256,7 @@
     
     async function convertirImagenYGenerarPDF() {
     await capturarContenidoCelda('celda1'); // Esperar a que la captura de la celda se complete
-    setTimeout(generarPDF, 100); // Esperar a que se genere el PDF después de capturar la celda
+    setTimeout(generarPDF, 200); // Esperar a que se genere el PDF después de capturar la celda
   }
 
   

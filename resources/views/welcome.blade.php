@@ -4,10 +4,15 @@
 <html>
 <head>
   <style>
-        @page {
+        body{position: relative;}
+        @media print {
+            @page {
             size: A3 landscape;
-            margin: 0;
-        }
+            margin: 0;}
+            
+            
+            }
+        
 
         html, body {
             width: 420mm;
@@ -23,9 +28,9 @@
             box-sizing: border-box;
         }
         table{border-collapse: collapse;}
-        td{font-size: 8.2px;height: 10px}
+        td{font-size: 8.2px;height: 9px}
         /*tbody{border: 1px solid black;}*/
-        th{text-align: center;font-size: 8.2px;height: 10px}
+        th{text-align: center;font-size: 7.2px;height: 9px}
         .vertical-text {
             writing-mode: vertical-rl;
             text-orientation: upright;
@@ -35,11 +40,41 @@
             display: flex;
             flex-direction: row;
         }
+        #planoCartesiano {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          background-image: url('/images/persona.jpeg');
+          background-size: 100% 100%;
+        }
+    
+        .coordenada {
+          position:absolute;
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background-color: red;
+          cursor:pointer;
+        }
+        
+        
+        /*.imagencelda{width: 140px;
+                height: 150px;}
+        .imagencelda2{
+            position: relative;
+            padding-bottom: 3px;
+            padding-top: 5px;
+            width: 220px;
+            height: 60px;
+            left: 8mm}*/
 
 
     /* Aquí puedes agregar tus estilos personalizados para el contenido del documento */
 
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </head>
 <body>
   <div class="content">
@@ -235,7 +270,9 @@
         <tr><td colspan="2">MODO</td>
             <?php for ($i=1; $i <= 24; $i++) {
                     if ($i%6==0) {echo "<td style='border-left: 3px black solid;border-right: 3px black solid'></td>";
-                    }else{echo "<td></td>";}} ?><td style="border: 2px black solid" colspan="5" rowspan="24"></td><TH style="border-bottom: 2px black solid">N</TH><TH style="border-right: 2px black solid;border-bottom: 2px black solid"></TH>
+                    }else{echo "<td></td>";}} ?>
+                    <td style="border: 2px black solid" colspan="5" rowspan="24" id="celda1" align="center"><div id="planoCartesiano" onclick="agregarCoordenada(event)"></div></td>
+        <TH style="border-bottom: 2px black solid">N</TH><TH style="border-right: 2px black solid;border-bottom: 2px black solid"></TH>
         </tr>
         <tr><td colspan="2">FIO2</td>
             <?php for ($i=1; $i <= 24; $i++) {
@@ -474,6 +511,110 @@
     <!-- Aquí puedes generar el contenido del documento -->
   </div>
 </body>
+<img id="imagenCapturada" style="display: none;" />
+ 
+<footer><div style="text-align: center">
+    
+
+    <button id="botonPDF" onclick="convertirImagenYGenerarPDF()">Generar y Descargar PDF</button>
+</div></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+
+
+    <Script>
+       
+    function agregarCoordenada(event) {
+      const celda = document.getElementById('celda1');
+      const celdaRect = celda.getBoundingClientRect();
+      const x = event.pageX - celdaRect.left + window.scrollX+354;
+      const y = event.pageY - celdaRect.top + window.scrollY-99;
+
+
+      const coordenada = document.createElement('div');
+      coordenada.className = 'coordenada';
+      coordenada.style.left = (x-4) + 'px';
+      coordenada.style.top = (y-4) + 'px';
+      celda.appendChild(coordenada);
+
+      // Captura el contenido de la celda y establece la imagen capturada
+      html2canvas(celda).then(function (canvas) {
+        const imgData = canvas.toDataURL('image/jpg');
+
+        // Eliminamos el plano cartesiano anterior
+        const planoAnterior = celda.querySelector('.planoCartesiano');
+        if (planoAnterior) {
+          planoAnterior.remove();
+        }
+
+        // Creamos un nuevo plano cartesiano con la imagen capturada
+        const nuevoPlanoCartesiano = document.createElement('div');
+        nuevoPlanoCartesiano.className = 'planoCartesiano';
+        nuevoPlanoCartesiano.style.backgroundImage = `url(${imgData})`;
+        nuevoPlanoCartesiano.onclick = (event) => agregarCoordenada(event);
+
+        // Agregamos el nuevo plano cartesiano a la celda
+        celda.appendChild(nuevoPlanoCartesiano);
+      });
+    }
+    
+    async function capturarContenidoCelda(celdaId) {
+        
+      const celda = document.getElementById(celdaId);
+
+       //Oculta el botón temporalmente para la versión de impresión
+      document.querySelector('button').style.visibility = 'hidden';
+
+      // Captura el contenido de la celda y conviértelo en una imagen
+      html2canvas(celda).then(function (canvas) {
+        const imgData = canvas.toDataURL('image/jpg');
+        const imagenCapturada = document.getElementById('imagenCapturada');
+        imagenCapturada.src = imgData;
+        imagenCapturada.style.display = 'block';
+
+        // Reemplaza el contenido de la celda con la nueva imagen
+        celda.innerHTML = '';
+        celda.appendChild(imagenCapturada);
+
+        // Vuelve a mostrar el botón después de capturar la imagen
+        document.querySelector('button').style.visibility = 'visible';
+      });
+    }
+        
+    async function generarPDF() {
+      // Muestra el botón antes de imprimir
+      const botonPDF = document.getElementById('botonPDF');
+      botonPDF.style.display = 'block';
+      
+      // Oculta el botón temporalmente para la versión de impresión
+      botonPDF.style.visibility = 'hidden';
+      
+      // Muestra las imágenes antes de imprimir
+      
+      const imagenes = document.querySelectorAll('img');
+      for (let i = 0; i < imagenes.length; i++) {
+        imagenes[i].style.display = 'block';
+      }
+
+      // Ejecuta la función de impresión del navegador
+      window.print();
+
+      // Vuelve a ocultar el botón para la versión de impresión
+      botonPDF.style.visibility = 'visible';
+
+      // Vuelve a ocultar las imágenes después de imprimir
+      for (let i = 0; i < imagenes.length; i++) {
+        imagenes[i].style.display = 'visible';
+      }
+    }
+    
+    async function convertirImagenYGenerarPDF() {
+    await capturarContenidoCelda('celda1'); // Esperar a que la captura de la celda se complete
+    setTimeout(generarPDF, 300); // Esperar a que se genere el PDF después de capturar la celda
+  }
+
+  
+    
+    </Script>
 </html>
 
 
