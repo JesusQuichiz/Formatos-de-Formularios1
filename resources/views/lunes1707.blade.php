@@ -385,7 +385,7 @@
             <td rowspan="12" width="20px" bgcolor="sky-blue" style="font-size: 12px"><div class="vertical-text">INGRESO</div></td>
                 <td height="14px">DIETA NE ( ) VO ( )</td><?php for ($i=1; $i < 5; $i++) { 
                 echo "<td colspan='3' style='border-left: 2px black solid'></td>"; } echo "<td colspan='4' style='border-left: 3px black solid'></td>" ?>
-                <th colspan="3" style='border: 2px black solid;border-left: 3px black solid'>HORA</th><th colspan="2" style="font-size: 7.5px;border: 2px black solid">PARAMETROS NORMALES</th>
+                <th colspan="3" style='border: 2px black solid;border-left: 3px black solid'>HORA</th><th colspan="2" style="border: 2px black solid">PARAMETROS NORMALES</th>
                 <?php for ($i=1; $i < 6; $i++) { echo "<td style='border: 2px black solid' width='50px'></td>"; } ?>
         </tr>
         <tr><td height="14px">NTP 2:1 ( )  NTP 3:1 ( )</td><?php for ($i=1; $i < 5; $i++) { echo "<td colspan='3' style='border-left: 2px black solid'></td>"; } echo "<td colspan='4' style='border-left: 3px black solid'></td>" ?> 
@@ -439,7 +439,7 @@
         </tr>
         <tr><td height="14px" style="border: 3px black solid">SUB TOTAL</td><?php for ($i=1; $i < 5; $i++) { echo "<td colspan='3' style='border: 3px black solid'></td>"; } echo "<td colspan='4' style='border: 3px black solid'></td>" ?> 
             <th colspan="3" style='border-left: 3px black solid;text-align: left'>HEMODERIVADOS</th><th style="border-left: 2px black solid">ACTUAL (CANTIDAD)</th>
-            <th style="border-left: 2px black solid;border-right: 2px black solid;font-size:7.5px">ACUMULADO</th><th rowspan="2" style="border-left: 2px black solid" bgcolor="sky-blue">CICLOS</th><th rowspan="2" bgcolor="sky-blue">INICIO</th><th rowspan="2" bgcolor="sky-blue">HORA</th><th rowspan="2" bgcolor="sky-blue">TERMINO</th><th rowspan="2" style="border-right: 2px black solid" bgcolor="sky-blue">HORA</th>
+            <th style="border-left: 2px black solid;border-right: 2px black solid">ACUMULADO</th><th rowspan="2" style="border-left: 2px black solid" bgcolor="sky-blue">CICLOS</th><th rowspan="2" bgcolor="sky-blue">INICIO</th><th rowspan="2" bgcolor="sky-blue">HORA</th><th rowspan="2" bgcolor="sky-blue">TERMINO</th><th rowspan="2" style="border-right: 2px black solid" bgcolor="sky-blue">HORA</th>
             <td>SONDA FOLEY</td><th colspan="2"></th><th></th><th style="border-right: 2px black solid"></th>
         </tr>
         <tr><td rowspan="13" bgcolor="sky-blue" style="font-size: 12px"><div class="vertical-text">EGRESOS</div></td>
