@@ -28,22 +28,25 @@ Route::get('Proyecto1Senati/Movimientodiario', function () {
 });
 Route::get('Proyecto1Senati/Evolucionmedica', function () {
     return view('Evolucionmedica');
-})
-;Route::get('Proyecto1Senati/EvolucionEnfermeria', function () {
+});
+Route::get('Proyecto1Senati/EvolucionEnfermeria', function () {
     return view('EvolucionEnfermeria');
 });
-;Route::get('Proyecto1Senati/Graficaclinica', function () {
+Route::get('Proyecto1Senati/Graficaclinica', function () {
     return view('Graficaclinica');
 });
-;Route::get('Proyecto1Senati/RegistroIncidentes', function () {
+Route::get('Proyecto1Senati/RegistroIncidentes', function () {
     return view('RegistroIncidentes');
 });
-;Route::get('Proyecto1Senati/NotaIngresoEnfermeria', function () {
+Route::get('Proyecto1Senati/NotaIngresoEnfermeria', function () {
     return view('NotaIngresoEnfermeria');
 });
-;Route::get('Proyecto1Senati/lunes1707', function () {
+Route::get('Proyecto1Senati/lunes1707', function () {
     return view('lunes1707');
 });
-;Route::get('Proyecto1Senati/HojaInterconsulta', function () {
+Route::get('Proyecto1Senati/HojaInterconsulta', function () {
     return view('HojaInterconsulta');
+});
+Route::get('Proyecto1Senati/ProcesoAtencionEnfermeria', function () {
+    return view('ProcesoAtencionEnfermeria');
 });
