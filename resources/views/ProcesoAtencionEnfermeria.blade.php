@@ -462,9 +462,9 @@
                 </tr>
                 <tr>
                     <th rowspan="2">Riesdo de deterioro de Integridad cutanea</th><td style="border-left: 2px black solid"></td><td></td><td style="border-right: 2px black solid"></td>
-                    <td rowspan="3" align="center" width="20px">1101</td><td rowspan="3" width="200px">Integridad tisular: piel y membranas mucosas</td><td style="border-left: 2px black solid"></td><td></td><td style="border-right: 2px black solid"></td>
-                    <td rowspan="3" align="center">3520</td><td rowspan="3" width="190px">Cuidados de ulceras por presion</td><td style="border-left: 2px black solid"></td><td></td><td style="border-right: 2px black solid"></td>
-                    <td rowspan="3" align="center">1101</td><td rowspan="3">Integridad tisular: piel y membranas mucosas</td><td style="border-left: 2px black solid"></td><td></td><td style="border-right: 2px black solid"></td>
+                    <td rowspan="3" align="center" width="20px">1101</td><td rowspan="3" width="207px">Integridad tisular: piel y membranas mucosas</td><td style="border-left: 2px black solid"></td><td></td><td style="border-right: 2px black solid"></td>
+                    <td rowspan="3" align="center">3520</td><td rowspan="3" width="199px">Cuidados de ulceras por presion</td><td style="border-left: 2px black solid"></td><td></td><td style="border-right: 2px black solid"></td>
+                    <td rowspan="3" align="center" width="20px">1101</td><td rowspan="3">Integridad tisular: piel y membranas mucosas</td><td style="border-left: 2px black solid"></td><td></td><td style="border-right: 2px black solid"></td>
                 </tr>
                 <tr>
                     <td style="border-left: 2px black solid"></td><td></td><td style="border-right: 2px black solid"></td>
@@ -876,9 +876,9 @@
                 </tr>
                 <tr>
                     <th>Respuesta ventilatoria disfuncional al destete</th><td style="border-left: 2px black solid"></td><td></td><td style="border-right: 2px black solid"></td>
-                    <td>0412</td><td>Mespuesta a la ventilacion mecanica del Adulto</td><td style="border-left: 2px black solid"></td><td></td><td style="border-right: 2px black solid"></td>
+                    <td>0412</td><td>Respuesta a la ventilacion mecanica del Adulto</td><td style="border-left: 2px black solid"></td><td></td><td style="border-right: 2px black solid"></td>
                     <td>3310</td><td>Destete de la ventilacion</td><td style="border-left: 2px black solid"></td><td></td><td style="border-right: 2px black solid"></td>
-                    <td>0412</td><td>Mespuesta a la ventilacion mecanica del Adulto</td><td style="border-left: 2px black solid"></td><td></td><td style="border-right: 2px black solid"></td>
+                    <td>0412</td><td>Respuesta a la ventilacion mecanica del Adulto</td><td style="border-left: 2px black solid"></td><td></td><td style="border-right: 2px black solid"></td>
                 </tr>
                 <tr>
                     <td>Disfuncion del diafragma adquirida un la unidad de cuidados intensivos</td><td style="border-left: 2px black solid"></td><td></td><td style="border-right: 2px black solid"></td>
